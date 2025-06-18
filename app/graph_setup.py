@@ -11,7 +11,17 @@ def initialize_graph():
         if not db.has_collection(edge_name):
             db.create_collection(edge_name, edge=True)
 
-    if not db.has_graph("access_graph"):
+    if db.has_graph("access_graph"):
+        graph = db.graph("access_graph")
+        existing_edges = set(e["edge_collection"] for e in graph.edge_definitions())
+        for e in edge_definitions:
+            if e["edge"] not in existing_edges:
+                graph.create_edge_definition(
+                    edge_collection=e["edge"],
+                    from_vertex_collections=e["from"],
+                    to_vertex_collections=e["to"]
+                )
+    else:
         db.create_graph(
             "access_graph",
             edge_definitions=[

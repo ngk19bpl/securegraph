@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>📂 All Cases</h2>
+<ul>
+    {% for case in cases %}
+        <li><a href="/cases/{{ case._key }}">{{ case.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

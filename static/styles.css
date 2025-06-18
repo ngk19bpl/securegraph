@@ -1,0 +1,28 @@
+body {
+    font-family: sans-serif;
+    margin: 2rem;
+    background: #f9f9f9;
+}
+
+h1 {
+    color: #333;
+}
+
+header {
+    background: #e1e1e1;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+nav a {
+    margin-right: 1rem;
+    text-decoration: none;
+    color: #007bff;
+}
+
+main {
+    background: white;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
